@@ -23,6 +23,8 @@ jobs:
       with: 
         distribution: 'zulu'
         java-version: 16
+    - name: Kill Existing Chrome Processes
+      run: pkill -f chrome || true   
     - name: Run tests with maven
       run: mvn test -PRegression -DbrowserName=chrome
     - name: Upload Extent Report as Artifact
