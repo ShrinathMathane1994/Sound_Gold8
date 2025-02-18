@@ -40,8 +40,7 @@ public class BaseTest {
                     option.addArguments("--headless");
                 }
                 driver = new ChromeDriver(option);
-            }
-            if (browser.contains("firefox")) {
+            } else if (browser.contains("firefox")) {
                 FirefoxOptions foption = new FirefoxOptions();
                 if (browser.contains("headless")) {
                     foption.addArguments("--headless");
