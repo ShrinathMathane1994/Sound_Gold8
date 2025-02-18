@@ -41,7 +41,7 @@ public class BaseTest {
                 }
                 driver = new ChromeDriver(option);
             }
-            if (browser.contains("firefor")) {
+            if (browser.contains("firefox")) {
                 FirefoxOptions foption = new FirefoxOptions();
                 if (browser.contains("headless")) {
                     foption.addArguments("--headless");
