@@ -21,13 +21,14 @@ public class LoginPage extends BasePage {
     public By emailId = By.id("TxtName");
     public By password = By.id("TxtPassword");
     public By loginBtn = By.name("command");
+    public By verifyHeaderText = By.xpath("//div[@data-autoid=\"pagetitleheading\"]");
 
     public String getPageTitle() {
         return jsUtil.getPageTitleByJS();
     }
 
-    public String verifyLoginPageTitle() {
-        return elementUtil.getPageTitle();
+    public String verifyLoggedPageHeader() {
+        return elementUtil.getEleText(verifyHeaderText);
     }
 
     public void doLogin(String userName, String pass) {

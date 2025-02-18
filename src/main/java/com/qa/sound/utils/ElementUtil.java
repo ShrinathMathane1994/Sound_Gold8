@@ -32,7 +32,7 @@ public class ElementUtil {
     public String getEleText(By locator) {
         String text = null;
         try {
-            wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+            wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
             text = driver.findElement(locator).getText();
         } catch (Exception e) {
             System.out.println(e.getMessage());

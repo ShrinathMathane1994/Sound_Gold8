@@ -21,8 +21,8 @@ public class LoginPageTest extends BaseTest {
 
     @Test(priority = 3, enabled = true,retryAnalyzer = Retry.class)
     public void verifyLoginTest() {
-        String title =  basePage.getPageInstance(LoginPage.class).verifyLoginPageTitle();
-        Assert.assertTrue(title.contains("Summary"));
+        String headerTxt =  basePage.getPageInstance(LoginPage.class).verifyLoggedPageHeader();
+        Assert.assertTrue(headerTxt.contains("Summary"));
         System.out.println("Login Successful");
     }
 
