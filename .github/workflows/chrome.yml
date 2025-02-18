@@ -24,7 +24,8 @@ jobs:
         distribution: 'zulu'
         java-version: 16
     - name: Run Tests
-      run: google-chrome --user-data-dir=$(mktemp -d)  
+      run: |
+       google-chrome --user-data-dir=$(mktemp -d)  
     - name: Run tests with maven
       run: mvn test -PRegression -DbrowserName=chrome
     - name: Upload Extent Report as Artifact
