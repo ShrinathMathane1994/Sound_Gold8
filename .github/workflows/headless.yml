@@ -30,3 +30,11 @@ jobs:
       with:
         name: extent-report
         path: reports/
+    - name: Deploy Extent Report to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+          branch: gh-pages  # The branch to deploy the report to
+          folder: reports/  # The folder that contains the report (adjust if needed)
+          file_scope: extent-report.html  # Name of the HTML report file (adjust as needed)
+          token: ${{ secrets.GITHUB_TOKEN }}  # Automatically generated token for authentication
+          clean: true
