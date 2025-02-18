@@ -32,25 +32,23 @@ public class BaseTest {
                     + "/src/test/java/com/qa/sound/configs/config.properties");
             prop.load(file);
             String browser = System.getProperty("browserName") != null ? System.getProperty("browserName") : prop.getProperty("browserName");
-            switch (browser) {
-                case "chrome":
-                    ChromeOptions option = new ChromeOptions();
-                    option.addArguments("--disable-gpu", "--window-size=1920,1200", "--ignore-certificate-errors",
-                            "--disable-extensions", "--no-sandbox", "--disable-dev-shm-usage");
-                    if (browser.contains("headless")) {
-                        option.addArguments("--headless");
-                    }
-                    driver = new ChromeDriver(option);
-                    break;
-                case "firefox":
-                    FirefoxOptions foption = new FirefoxOptions();
-                    if (browser.contains("headless")) {
-                        foption.addArguments("--headless");
-                    }
-                    driver = new FirefoxDriver(foption);
-                    break;
-                default:
-                    System.out.println("Provide Valid Browser Name");
+            if (browser.contains("chrome")) {
+                ChromeOptions option = new ChromeOptions();
+                option.addArguments("--disable-gpu", "--window-size=1920,1200", "--ignore-certificate-errors",
+                        "--disable-extensions", "--no-sandbox", "--disable-dev-shm-usage");
+                if (browser.contains("headless")) {
+                    option.addArguments("--headless");
+                }
+                driver = new ChromeDriver(option);
+            }
+            if (browser.contains("firefor")) {
+                FirefoxOptions foption = new FirefoxOptions();
+                if (browser.contains("headless")) {
+                    foption.addArguments("--headless");
+                }
+                driver = new FirefoxDriver(foption);
+            } else {
+                System.out.println("Provide Valid Browser Name");
             }
 
             driver.manage().deleteAllCookies();
