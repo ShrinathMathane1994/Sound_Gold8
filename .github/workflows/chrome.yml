@@ -29,8 +29,6 @@ jobs:
       run: Xvfb :99 -screen 0 1920x1080x24 & echo "Xvfb started"
     - name: Set DISPLAY Environment Variable
       run: echo "DISPLAY=:99" >> $GITHUB_ENV
-    - name: Run Chrome with GUI
-      run: google-chrome --no-sandbox --disable-gpu --disable-dev-shm-usage --user-data-dir=$(mktemp -d)
     - name: Run tests with maven
       run: mvn test -PRegression -DbrowserName=chrome
     - name: Upload Extent Report as Artifact
