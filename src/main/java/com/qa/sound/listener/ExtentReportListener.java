@@ -21,7 +21,7 @@ import java.util.Date;
 public class ExtentReportListener implements ITestListener {
 
     public static String filePath = "./reports/";
-    public static String fileName = "extent-report.html";
+    public static String fileName = System.currentTimeMillis()+"_ExtentReport.html";
 
     public static WebDriver driver;
     public static ExtentReports extentReports = init();
