@@ -25,8 +25,8 @@ jobs:
         java-version: 16
     - name: Run tests with maven
       run: mvn test -PRegression -DbrowserName=chromeheadless
-    - name: Deploy pages
-      uses: JamesIves/github-pages-deploy-action@v4.5.0
+    - name: Upload Extent Report as Artifact
+      uses: actions/upload-artifact@v2
       with:
-        branch: gh-pages
-        folder: reports
+        name: extent-report
+        path: reports/extent-report.html
