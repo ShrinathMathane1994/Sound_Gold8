@@ -31,7 +31,7 @@ jobs:
         name: Extent-Report
         path: reports/
     - name: Deploy Extent Report to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@v4.1.1
+      uses: JamesIves/github-pages-deploy-action@v4
       with:
           branch: gh-pages  # The branch to deploy the report to
           folder: reports/  # The folder that contains the report (adjust if needed)
