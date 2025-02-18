@@ -24,4 +24,4 @@ jobs:
         distribution: 'zulu'
         java-version: 16
     - name: Run tests with maven
-      run: mvn test -PRegression
+      run: mvn test -PRegression -DbrowserName=firefox
